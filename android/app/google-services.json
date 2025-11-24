@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "686697596088",
+    "firebase_url": "https://edusocial-c7f92-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "edusocial-c7f92",
+    "storage_bucket": "edusocial-c7f92.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:686697596088:android:cb8ddcd61ab579d9fb204d",
+        "android_client_info": {
+          "package_name": "com.rikedom.edu_social"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "686697596088-h6gbdvho6phtdrtvsf4obmppac0gq4kk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJBVr04Dz2jkFycN23JKbd0VTj223e7IM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "686697596088-h6gbdvho6phtdrtvsf4obmppac0gq4kk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "686697596088-5872thmk6qhm4fdo1sifaq8q44enmac6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.rikedom.edusocial"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
