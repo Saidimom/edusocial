@@ -2,6 +2,7 @@ import 'package:edu_social/app/router/app_router.dart';
 import 'package:edu_social/features/registration/presentation/pages/registration_flow.dart';
 import 'package:edu_social/app/pages/splash_page.dart';
 import 'package:edu_social/features/posts/presentation/pages/home_page.dart';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 final GoRouter appRouter = GoRouter(
@@ -13,14 +14,42 @@ final GoRouter appRouter = GoRouter(
       builder: (context, state) => const SplashPage(),
     ),
     GoRoute(
+      path: AppRoutes.login,
+      name: AppRoutes.loginName,
+      builder: (context, state) => const RegistrationFlow(),
+    ),
+    GoRoute(
       path: AppRoutes.registration,
       name: AppRoutes.registrationName,
       builder: (context, state) => const RegistrationFlow(),
     ),
-    GoRoute(
-      path: AppRoutes.home,
-      name: AppRoutes.homeName,
-      builder: (context, state) => const HomePage(),
+    StatefulShellRoute.indexedStack(
+      builder: (context, state, navigationShell) {
+        return Scaffold(
+          body: navigationShell,
+          bottomNavigationBar: BottomNavigationBar(
+            currentIndex: navigationShell.currentIndex,
+            onTap: (value) {
+              navigationShell.goBranch(value);
+            },
+            type: BottomNavigationBarType.fixed,
+            items: const [
+              BottomNavigationBarItem(icon: Icon(Icons.article), label: 'Posts'),
+              BottomNavigationBarItem(icon: Icon(Icons.list_alt), label: 'Listings'),
+              BottomNavigationBarItem(icon: Icon(Icons.agriculture), label: 'MyFarm'),
+              BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+            ],
+          ),
+        );
+      },
+
+      branches: [
+        StatefulShellBranch(
+          routes: [
+            GoRoute(path: '/posts', name: 'posts', builder: (context, state) => const HomePage()),
+          ],
+        ),
+      ],
     ),
   ],
 );
