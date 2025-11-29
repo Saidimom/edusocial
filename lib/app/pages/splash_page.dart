@@ -1,10 +1,43 @@
 import 'package:edu_social/app/router/app_router.dart';
 import 'package:edu_social/app/theme/app_colors.dart';
+import 'package:edu_social/features/login/presentation/providers/login_providers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-class SplashPage extends StatelessWidget {
+class SplashPage extends ConsumerStatefulWidget {
   const SplashPage({super.key});
+
+  @override
+  ConsumerState<SplashPage> createState() {
+    return _SplashPageState();
+  }
+}
+
+class _SplashPageState extends ConsumerState<SplashPage> {
+  @override
+  void initState() {
+    super.initState();
+    _checkAuthStatus();
+  }
+
+  Future<void> _checkAuthStatus() async {
+    await Future.delayed(const Duration(seconds: 1));
+
+    if (!mounted) return;
+
+    try {
+      final getCurrentUserUsecase = ref.read(getCurrentUserUsecaseProvider);
+      await getCurrentUserUsecase.call();
+      if (mounted) {
+        context.go('/posts');
+      }
+    } catch (e) {
+      if (mounted) {
+        context.go(AppRoutes.welcome);
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,56 +56,12 @@ class SplashPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                const SizedBox(height: 20),
                 // Center welcome text
                 const Text(
-                  'Welcome to EduSocial!',
+                  'EduSocial',
                   style: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
-                ),
-                const Spacer(),
-                // Bottom section with button and link
-                Column(
-                  children: [
-                    // Sign in with Google button
-                    SizedBox(
-                      width: double.infinity,
-                      child: ElevatedButton.icon(
-                        onPressed: () {
-                          // TODO: Implement Google sign in
-                          // For now, navigate to login
-                          context.push(AppRoutes.login);
-                        },
-                        icon: const Icon(Icons.g_mobiledata, size: 28),
-                        label: const Text(
-                          'Sign in (Google)',
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-                        ),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.white,
-                          foregroundColor: AppColors.primary,
-                          padding: const EdgeInsets.symmetric(vertical: 16),
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 16),
-                    // Sign up link
-                    TextButton(
-                      onPressed: () {
-                        context.push(AppRoutes.registration);
-                      },
-                      child: const Text(
-                        "Don't have account yet? Sign In",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 14,
-                          decoration: TextDecoration.underline,
-                          decorationColor: Colors.white,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 32),
-                  ],
                 ),
               ],
             ),

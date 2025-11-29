@@ -1,4 +1,6 @@
+import 'package:edu_social/app/pages/welcome_page.dart';
 import 'package:edu_social/app/router/app_router.dart';
+import 'package:edu_social/features/login/presentation/pages/login_page.dart';
 import 'package:edu_social/features/registration/presentation/pages/registration_flow.dart';
 import 'package:edu_social/app/pages/splash_page.dart';
 import 'package:edu_social/features/posts/presentation/pages/home_page.dart';
@@ -14,9 +16,14 @@ final GoRouter appRouter = GoRouter(
       builder: (context, state) => const SplashPage(),
     ),
     GoRoute(
+      path: AppRoutes.welcome,
+      name: AppRoutes.welcomeName,
+      builder: (context, state) => const WelcomePage(),
+    ),
+    GoRoute(
       path: AppRoutes.login,
       name: AppRoutes.loginName,
-      builder: (context, state) => const RegistrationFlow(),
+      builder: (context, state) => const LoginPage(),
     ),
     GoRoute(
       path: AppRoutes.registration,

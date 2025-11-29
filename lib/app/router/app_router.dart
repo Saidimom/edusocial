@@ -2,11 +2,13 @@ import 'package:go_router/go_router.dart';
 
 class AppRoutes {
   static const String splash = '/';
+  static const String welcome = '/welcome';
   static const String login = '/login';
   static const String registration = '/registration';
   static const String home = '/home';
 
   static const String splashName = 'splash';
+  static const String welcomeName = 'welcome';
   static const String loginName = 'login';
   static const String registrationName = 'registration';
   static const String homeName = 'home';

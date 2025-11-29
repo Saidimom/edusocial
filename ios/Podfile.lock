@@ -10,6 +10,8 @@ PODS:
     - GoogleUtilities/UserDefaults (~> 8.0)
     - PromisesObjC (~> 2.4)
   - Flutter (1.0.0)
+  - flutter_secure_storage (3.3.1):
+    - Flutter
   - geolocator_apple (1.2.0):
     - Flutter
     - FlutterMacOS
@@ -48,6 +50,7 @@ PODS:
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
+  - flutter_secure_storage (from `.symlinks/plugins/flutter_secure_storage/ios`)
   - geolocator_apple (from `.symlinks/plugins/geolocator_apple/darwin`)
   - google_sign_in_ios (from `.symlinks/plugins/google_sign_in_ios/darwin`)
   - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
@@ -66,6 +69,8 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
+  flutter_secure_storage:
+    :path: ".symlinks/plugins/flutter_secure_storage/ios"
   geolocator_apple:
     :path: ".symlinks/plugins/geolocator_apple/darwin"
   google_sign_in_ios:
@@ -79,6 +84,7 @@ SPEC CHECKSUMS:
   AppAuth: 1c1a8afa7e12f2ec3a294d9882dfa5ab7d3cb063
   AppCheckCore: cc8fd0a3a230ddd401f326489c99990b013f0c4f
   Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
+  flutter_secure_storage: 50035aef357c5a8bdd67fd6bc81370d46efc4d16
   geolocator_apple: ab36aa0e8b7d7a2d7639b3b4e48308394e8cef5e
   google_sign_in_ios: 00dfa94252eb10278b64828c81bcb7158a81a53a
   GoogleSignIn: c7f09cfbc85a1abf69187be091997c317cc33b77
