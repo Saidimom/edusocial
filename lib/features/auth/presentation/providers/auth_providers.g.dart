@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'login_providers.dart';
+part of 'auth_providers.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -9,89 +9,87 @@ part of 'login_providers.dart';
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
 
-@ProviderFor(loginDataSource)
-const loginDataSourceProvider = LoginDataSourceProvider._();
+@ProviderFor(authDataSource)
+const authDataSourceProvider = AuthDataSourceProvider._();
 
-final class LoginDataSourceProvider
-    extends
-        $FunctionalProvider<LoginDataSource, LoginDataSource, LoginDataSource>
-    with $Provider<LoginDataSource> {
-  const LoginDataSourceProvider._()
+final class AuthDataSourceProvider
+    extends $FunctionalProvider<AuthDataSource, AuthDataSource, AuthDataSource>
+    with $Provider<AuthDataSource> {
+  const AuthDataSourceProvider._()
     : super(
         from: null,
         argument: null,
         retry: null,
-        name: r'loginDataSourceProvider',
+        name: r'authDataSourceProvider',
         isAutoDispose: true,
         dependencies: null,
         $allTransitiveDependencies: null,
       );
 
   @override
-  String debugGetCreateSourceHash() => _$loginDataSourceHash();
+  String debugGetCreateSourceHash() => _$authDataSourceHash();
 
   @$internal
   @override
-  $ProviderElement<LoginDataSource> $createElement($ProviderPointer pointer) =>
+  $ProviderElement<AuthDataSource> $createElement($ProviderPointer pointer) =>
       $ProviderElement(pointer);
 
   @override
-  LoginDataSource create(Ref ref) {
-    return loginDataSource(ref);
+  AuthDataSource create(Ref ref) {
+    return authDataSource(ref);
   }
 
   /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(LoginDataSource value) {
+  Override overrideWithValue(AuthDataSource value) {
     return $ProviderOverride(
       origin: this,
-      providerOverride: $SyncValueProvider<LoginDataSource>(value),
+      providerOverride: $SyncValueProvider<AuthDataSource>(value),
     );
   }
 }
 
-String _$loginDataSourceHash() => r'17bd94113292c8cca72158e81d1d10721e20099e';
+String _$authDataSourceHash() => r'203a10a090c8631642a0e1eed8d4a45e6a25391e';
 
-@ProviderFor(loginRepository)
-const loginRepositoryProvider = LoginRepositoryProvider._();
+@ProviderFor(authRepository)
+const authRepositoryProvider = AuthRepositoryProvider._();
 
-final class LoginRepositoryProvider
-    extends
-        $FunctionalProvider<LoginRepository, LoginRepository, LoginRepository>
-    with $Provider<LoginRepository> {
-  const LoginRepositoryProvider._()
+final class AuthRepositoryProvider
+    extends $FunctionalProvider<AuthRepository, AuthRepository, AuthRepository>
+    with $Provider<AuthRepository> {
+  const AuthRepositoryProvider._()
     : super(
         from: null,
         argument: null,
         retry: null,
-        name: r'loginRepositoryProvider',
+        name: r'authRepositoryProvider',
         isAutoDispose: true,
         dependencies: null,
         $allTransitiveDependencies: null,
       );
 
   @override
-  String debugGetCreateSourceHash() => _$loginRepositoryHash();
+  String debugGetCreateSourceHash() => _$authRepositoryHash();
 
   @$internal
   @override
-  $ProviderElement<LoginRepository> $createElement($ProviderPointer pointer) =>
+  $ProviderElement<AuthRepository> $createElement($ProviderPointer pointer) =>
       $ProviderElement(pointer);
 
   @override
-  LoginRepository create(Ref ref) {
-    return loginRepository(ref);
+  AuthRepository create(Ref ref) {
+    return authRepository(ref);
   }
 
   /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(LoginRepository value) {
+  Override overrideWithValue(AuthRepository value) {
     return $ProviderOverride(
       origin: this,
-      providerOverride: $SyncValueProvider<LoginRepository>(value),
+      providerOverride: $SyncValueProvider<AuthRepository>(value),
     );
   }
 }
 
-String _$loginRepositoryHash() => r'f1732af1fdd5951f07b6b9e1fe6d6f01212e5411';
+String _$authRepositoryHash() => r'7517005bd7782fbda76383527638e9f71de8c232';
 
 @ProviderFor(loginUsecase)
 const loginUsecaseProvider = LoginUsecaseProvider._();
@@ -132,7 +130,7 @@ final class LoginUsecaseProvider
   }
 }
 
-String _$loginUsecaseHash() => r'a7112ebb3991b603828956421053e8ea47336842';
+String _$loginUsecaseHash() => r'b6751a7f38c360fca93a350f3e61557414fb1290';
 
 @ProviderFor(getCurrentUserUsecase)
 const getCurrentUserUsecaseProvider = GetCurrentUserUsecaseProvider._();
@@ -180,4 +178,4 @@ final class GetCurrentUserUsecaseProvider
 }
 
 String _$getCurrentUserUsecaseHash() =>
-    r'ec6921797e2e94ee8db912c5e8f0c0a91d30c21d';
+    r'ed2decfbd6a5317669c848a2f8640d853d39d712';

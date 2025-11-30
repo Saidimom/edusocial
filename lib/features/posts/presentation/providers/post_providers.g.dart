@@ -137,7 +137,7 @@ final class GetAllPostsUsecaseProvider
 }
 
 String _$getAllPostsUsecaseHash() =>
-    r'a3ece7310907222187bc3ecb4a15a06fe64322ce';
+    r'abd685c9a2793c8d71ff2e3b1e1633e76c2143c3';
 
 @ProviderFor(getPostUsecase)
 const getPostUsecaseProvider = GetPostUsecaseProvider._();
@@ -178,4 +178,4 @@ final class GetPostUsecaseProvider
   }
 }
 
-String _$getPostUsecaseHash() => r'5f6b1e569587379a552d75735291a79f831f04f0';
+String _$getPostUsecaseHash() => r'1f87de6380bed652ba8b1db3200ef683b9b9769e';

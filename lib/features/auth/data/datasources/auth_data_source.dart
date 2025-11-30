@@ -2,9 +2,9 @@ import 'package:dio/dio.dart';
 import 'package:edu_social/features/shared/data/models/user_model.dart';
 import 'package:edu_social/features/shared/domain/entities/user.dart';
 
-class LoginDataSource {
+class AuthDataSource {
   final Dio dio;
-  LoginDataSource(this.dio);
+  AuthDataSource(this.dio);
 
   Future<Map<String, dynamic>> login(String username, String password) async {
     final response = await dio.post(

@@ -1,7 +1,9 @@
 import 'package:edu_social/features/shared/domain/entities/user.dart';
 
-abstract class LoginRepository {
+abstract class AuthRepository {
   Future<User> login(String username, String password);
 
   Future<User> getCurrentUser();
+
+  Future<void> logout();
 }
