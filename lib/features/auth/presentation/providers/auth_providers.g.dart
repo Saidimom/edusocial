@@ -179,3 +179,44 @@ final class GetCurrentUserUsecaseProvider
 
 String _$getCurrentUserUsecaseHash() =>
     r'ed2decfbd6a5317669c848a2f8640d853d39d712';
+
+@ProviderFor(logoutUsecase)
+const logoutUsecaseProvider = LogoutUsecaseProvider._();
+
+final class LogoutUsecaseProvider
+    extends $FunctionalProvider<LogoutUsecase, LogoutUsecase, LogoutUsecase>
+    with $Provider<LogoutUsecase> {
+  const LogoutUsecaseProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'logoutUsecaseProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$logoutUsecaseHash();
+
+  @$internal
+  @override
+  $ProviderElement<LogoutUsecase> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  LogoutUsecase create(Ref ref) {
+    return logoutUsecase(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(LogoutUsecase value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<LogoutUsecase>(value),
+    );
+  }
+}
+
+String _$logoutUsecaseHash() => r'f82a84a6d12e6c5c4d88f421af3675c9b1f9c8ed';

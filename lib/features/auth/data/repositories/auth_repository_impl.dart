@@ -34,8 +34,8 @@ class AuthRepositoryImpl extends AuthRepository {
   }
 
   @override
-  Future<void> logout() {
-    // TODO: implement logout
-    throw UnimplementedError();
+  Future<void> logout() async {
+    secureStorage.delete(key: 'accessToken');
+    secureStorage.delete(key: 'refreshToken');
   }
 }

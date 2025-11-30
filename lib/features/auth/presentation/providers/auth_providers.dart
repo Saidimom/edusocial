@@ -4,6 +4,7 @@ import 'package:edu_social/features/auth/data/repositories/auth_repository_impl.
 import 'package:edu_social/features/auth/domain/repositories/auth_repository.dart';
 import 'package:edu_social/features/auth/domain/usecases/get_current_user_usecase.dart';
 import 'package:edu_social/features/auth/domain/usecases/login_usecase.dart';
+import 'package:edu_social/features/auth/domain/usecases/logout_usecase.dart';
 
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -28,4 +29,9 @@ LoginUsecase loginUsecase(Ref ref) {
 @riverpod
 GetCurrentUserUsecase getCurrentUserUsecase(Ref ref) {
   return GetCurrentUserUsecase(ref.watch(authRepositoryProvider));
+}
+
+@riverpod
+LogoutUsecase logoutUsecase(Ref ref) {
+  return LogoutUsecase(authRepository: ref.watch(authRepositoryProvider));
 }
