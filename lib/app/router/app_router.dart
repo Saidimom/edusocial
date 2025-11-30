@@ -6,6 +6,7 @@ class AppRoutes {
   static const String login = '/login';
   static const String registration = '/registration';
   static const String home = '/home';
+  static const String postDetails = '/posts/:id';
 
   static const String splashName = 'splash';
   static const String welcomeName = 'welcome';

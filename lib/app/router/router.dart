@@ -1,6 +1,7 @@
 import 'package:edu_social/app/pages/welcome_page.dart';
 import 'package:edu_social/app/router/app_router.dart';
 import 'package:edu_social/features/login/presentation/pages/login_page.dart';
+import 'package:edu_social/features/posts/presentation/pages/post_details_page.dart';
 import 'package:edu_social/features/registration/presentation/pages/registration_flow.dart';
 import 'package:edu_social/app/pages/splash_page.dart';
 import 'package:edu_social/features/posts/presentation/pages/home_page.dart';
@@ -54,6 +55,14 @@ final GoRouter appRouter = GoRouter(
         StatefulShellBranch(
           routes: [
             GoRoute(path: '/posts', name: 'posts', builder: (context, state) => const HomePage()),
+            GoRoute(
+              path: '/posts/:id',
+              name: 'postDetails',
+              builder: (context, state) {
+                final postId = int.parse(state.pathParameters['id']!);
+                return PostDetailsPage(postId: postId);
+              },
+            ),
           ],
         ),
       ],
